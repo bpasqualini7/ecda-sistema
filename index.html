@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eu, de Corpo e Alma — Central</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-box">
+      <div class="lotus-logo">
+        <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 85 C60 85 20 65 20 35 C20 20 35 15 45 25 C48 28 51 32 54 38 C55 30 56 22 60 15 C64 22 65 30 66 38 C69 32 72 28 75 25 C85 15 100 20 100 35 C100 65 60 85 60 85Z" stroke="#c9a96e" stroke-width="1.5" fill="none"/>
+          <path d="M60 85 C60 85 35 72 30 50 C35 55 45 58 54 55 C56 62 58 70 60 78 C62 70 64 62 66 55 C75 58 85 55 90 50 C85 72 60 85 60 85Z" stroke="#c9a96e" stroke-width="1.2" fill="none" opacity="0.6"/>
+          <path d="M60 85 L60 95" stroke="#c9a96e" stroke-width="1.2"/>
+          <path d="M45 92 Q60 95 75 92" stroke="#c9a96e" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <h1>Eu, de Corpo e Alma</h1>
+      <p>Central de Conteúdo & Projetos</p>
+      <button id="btn-login" class="btn-google" onclick="auth.login()">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Entrar com Google
+      </button>
+      <p class="login-note">Seus dados ficam no seu próprio Google Drive e Google Sheets.</p>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" style="display:none">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <svg viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg" width="32">
+          <path d="M30 42 C30 42 10 32 10 17 C10 10 17 7 22 12 C24 14 26 17 27 20 C27.5 15 28 10 30 7 C32 10 32.5 15 33 20 C34 17 36 14 38 12 C43 7 50 10 50 17 C50 32 30 42 30 42Z" stroke="#c9a96e" stroke-width="1.2" fill="none"/>
+        </svg>
+        <span>ECDA</span>
+      </div>
+      <nav>
+        <button class="nav-item active" onclick="app.showPage('dashboard')" data-page="dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Dashboard
+        </button>
+        <button class="nav-item" onclick="app.showPage('conteudo')" data-page="conteudo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.069A1 1 0 0121 8.87v6.26a1 1 0 01-1.447.9L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z"/></svg>
+          Conteúdo
+        </button>
+        <button class="nav-item" onclick="app.showPage('ideias')" data-page="ideias">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          Ideias
+        </button>
+        <button class="nav-item" onclick="app.showPage('produtos')" data-page="produtos">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          Produtos
+        </button>
+        <button class="nav-item" onclick="app.showPage('arquivos')" data-page="arquivos">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>
+          Arquivos
+        </button>
+        <button class="nav-item" onclick="app.showPage('calendario')" data-page="calendario">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Calendário
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-info" id="user-info"></div>
+        <button class="btn-logout" onclick="auth.logout()">Sair</button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- DASHBOARD -->
+      <div id="page-dashboard" class="page active">
+        <div class="page-header">
+          <h2>Dashboard</h2>
+          <p id="greeting"></p>
+        </div>
+        <div class="stats-grid" id="stats-grid"></div>
+        <div class="dashboard-cols">
+          <div>
+            <h3 class="section-title">Próximos conteúdos</h3>
+            <div id="upcoming-list"></div>
+          </div>
+          <div>
+            <h3 class="section-title">Banco de ideias</h3>
+            <div id="ideas-preview"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO -->
+      <div id="page-conteudo" class="page">
+        <div class="page-header">
+          <h2>Conteúdo Digital</h2>
+          <button class="btn-primary" onclick="modals.openConteudo()">+ Novo</button>
+        </div>
+        <div class="filters-bar">
+          <select id="filter-cat" onchange="app.renderConteudo()">
+            <option value="">Todas as categorias</option>
+            <option>Ciência</option><option>Espiritualidade</option>
+            <option>Filosofia</option><option>Mitologia</option><option>História</option>
+          </select>
+          <select id="filter-status" onchange="app.renderConteudo()">
+            <option value="">Todos os status</option>
+            <option>Publicado</option><option>Em produção</option><option>Planejado</option>
+          </select>
+          <select id="filter-fmt" onchange="app.renderConteudo()">
+            <option value="">Todos os formatos</option>
+            <option>YouTube</option><option>Short</option><option>Reels</option><option>Carrossel</option>
+          </select>
+          <input type="text" id="filter-search" placeholder="Buscar..." oninput="app.renderConteudo()">
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Personagem / Tema</th><th>Categoria</th><th>Formato</th><th>Status</th><th>Data</th><th>Ações</th></tr>
+            </thead>
+            <tbody id="conteudo-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- IDEIAS -->
+      <div id="page-ideias" class="page">
+        <div class="page-header">
+          <h2>Banco de Ideias</h2>
+          <button class="btn-primary" onclick="modals.openIdeia()">+ Nova ideia</button>
+        </div>
+        <div id="ideias-grid" class="cards-grid"></div>
+      </div>
+
+      <!-- PRODUTOS -->
+      <div id="page-produtos" class="page">
+        <div class="page-header">
+          <h2>Produtos</h2>
+          <button class="btn-primary" onclick="modals.openProduto()">+ Novo produto</button>
+        </div>
+        <div id="produtos-grid" class="cards-grid"></div>
+      </div>
+
+      <!-- ARQUIVOS -->
+      <div id="page-arquivos" class="page">
+        <div class="page-header">
+          <h2>Arquivos no Drive</h2>
+          <label class="btn-primary" style="cursor:pointer">
+            ↑ Upload
+            <input type="file" id="file-upload" style="display:none" onchange="drive.upload(this.files[0])">
+          </label>
+        </div>
+        <div id="drive-status" class="drive-status"></div>
+        <div id="arquivos-list"></div>
+      </div>
+
+      <!-- CALENDÁRIO -->
+      <div id="page-calendario" class="page">
+        <div class="page-header">
+          <h2>Calendário Editorial</h2>
+        </div>
+        <div id="cal-header" class="cal-controls"></div>
+        <div id="cal-body"></div>
+      </div>
+
+      <!-- DETALHE DE CONTEÚDO -->
+      <div id="page-detail" style="display:none">
+        <div id="detail-content"></div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODALS -->
+  <div id="modal-bg" class="modal-bg" onclick="modals.close(event)">
+    <div class="modal" id="modal-box">
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/sheets.js"></script>
+  <script src="js/drive.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
