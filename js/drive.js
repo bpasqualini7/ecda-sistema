@@ -6,7 +6,7 @@ const DRIVE_CONFIG = {
   // ID da pasta no Drive onde os arquivos serão salvos.
   // Deixe vazio para salvar na raiz do Drive.
   // Para usar uma pasta: abra a pasta no Drive, copie o ID da URL.
-  FOLDER_ID: '',
+  FOLDER_ID: '1Xl0UfdWLwG0a3nrCdFV3der652_cqqbn',
   UPLOAD_URL: 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart',
   LIST_URL:   'https://www.googleapis.com/drive/v3/files',
 };

@@ -6,7 +6,7 @@
 // ============================================================
 
 const CONFIG = {
-  CLIENT_ID: 'SEU_CLIENT_ID_AQUI.apps.googleusercontent.com',
+  CLIENT_ID: '84397126664-kbs6qtpa8sob5bs34lsr8esviu7078q6.apps.googleusercontent.com',
   SCOPES: [
     'https://www.googleapis.com/auth/spreadsheets',
     'https://www.googleapis.com/auth/drive.file',

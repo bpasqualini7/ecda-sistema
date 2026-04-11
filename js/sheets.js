@@ -6,7 +6,7 @@
 // ============================================================
 
 const SHEETS_CONFIG = {
-  SPREADSHEET_ID: 'SEU_SPREADSHEET_ID_AQUI',
+  SPREADSHEET_ID: '1e3RVX5Df70fLMYuQFxEKgx0A0MyPxYI706J2_Rw6SFw',
   BASE: 'https://sheets.googleapis.com/v4/spreadsheets',
 
   // Abas da planilha (crie estas abas manualmente ou use sheets.setup())
